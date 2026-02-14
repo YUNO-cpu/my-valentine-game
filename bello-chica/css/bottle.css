@@ -168,3 +168,39 @@
     0% { bottom: -50px; transform: translateX(0); opacity: 1; }
     100% { bottom: 110vh; transform: translateX(50px) rotate(360deg); opacity: 0; }
 }
+
+/* Зүрхний хөдөлгөөнийг гүйцээх */
+.floating-heart-particle {
+    position: absolute;
+    bottom: -50px; /* Эхлэх цэг */
+    pointer-events: none; /* Дарахад саад болохгүй */
+    z-index: 999;
+    animation: floatUp 4s linear forwards; /* Animation-ийг энд зааж өгнө */
+}
+
+@keyframes floatUp {
+    0% { 
+        bottom: -50px; 
+        transform: translateX(0) rotate(0deg); 
+        opacity: 1; 
+    }
+    50% {
+        transform: translateX(20px) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% { 
+        bottom: 110vh; 
+        transform: translateX(-20px) rotate(360deg); 
+        opacity: 0; 
+    }
+}
+
+/* Celebration хуудас дүүрэн байх */
+.final-celebration {
+    position: fixed; /* Эсвэл absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+}
