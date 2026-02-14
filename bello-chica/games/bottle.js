@@ -58,7 +58,7 @@ function celebrate(isYes) {
                     <div class="final-text-area">
                         <p class="msg-line">No matter your answer...</p>
                         <p class="msg-line">I already like you a lot.</p>
-                        <h2 class="final-valentine">Happy Valentine’s Day. ❤️</h2>
+                        <h2 class="final-valentine">Happy Valentine’s Day. ❤️🌷</h2>
                         <p class="msg-line">Thank you for being you.</p>
                     </div>
                 </div>
