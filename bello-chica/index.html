@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bello Chica</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="css/matching.css">
+    <link rel="stylesheet" href="css/claw.css">
+    <link rel="stylesheet" href="css/scramble.css">
+    <link rel="stylesheet" href="css/mapNav.css">
+    <link rel="stylesheet" href="css/loveMeter.css">
+    <link rel="stylesheet" href="css/starConnect.css">
+    <link rel="stylesheet" href="css/xoHeart.css">
+    <link rel="stylesheet" href="css/heartPop.css">
+    <link rel="stylesheet" href="css/datePuzzle.css">
+    <link rel="stylesheet" href="css/catchHeart.css">
+    <link rel="stylesheet" href="css/loveThermometer.css">
+    <link rel="stylesheet" href="css/bottle.css">
+</head>
+<body>
+    <div id="main-menu" class="app-shell">
+        <header>
+            <h1 class="brand">Bello Chica</h1>
+            <div class="divider"></div>
+        </header>
+        <div class="menu-grid" id="grid-container"></div>
+    </div>
+
+    <div id="game-overlay" class="game-overlay hidden">
+        <div class="game-header">
+            <button onclick="backToMenu()" class="back-btn">← BACK</button>
+            <h2 id="current-game-title"></h2>
+            <div style="width:50px"></div>
+        </div>
+        <div id="game-canvas" class="game-canvas"></div>
+    </div>
+
+    <script src="games/matching.js"></script>
+    <script src="games/claw.js"></script>
+    <script src="games/scramble.js"></script>
+    <script src="games/mapNav.js"></script>
+    <script src="games/loveMeter.js"></script>
+    <script src="games/starConnect.js"></script>
+    <script src="games/xoHeart.js"></script>
+    <script src="games/heartPop.js"></script>
+    <script src="games/datePuzzle.js"></script>
+    <script src="games/catchHeart.js"></script>
+    <script src="games/loveThermometer.js"></script>
+    <script src="games/bottle.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>

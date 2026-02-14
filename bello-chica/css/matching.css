@@ -1,0 +1,146 @@
+.matching-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 45px);
+    grid-template-rows: repeat(6, 45px);
+    gap: 6px;
+    justify-content: center;
+    padding: 15px;
+}
+
+/* Голын хөдөлгөөнгүй R карт */
+.static-card {
+    width: 45px;
+    height: 45px;
+    background: var(--cherry); /* Чиний дуртай cherry өнгө */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 200; /* Нарийн гоё фонт */
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(155, 27, 48, 0.2);
+    z-index: 5;
+}
+
+
+.match-card {
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.match-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(155, 27, 48, 0.1);
+}
+
+/* Нүүр тал - Minimalist (No emoji) */
+.card-front {
+    background: #FFFFFF;
+    border: 1px solid #F0F0F0;
+}
+
+/* Картын нүүрэн дээрх жижиг гоё цэг (Cherry red) */
+.card-front::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--cherry);
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+/* Ар тал - Зурагтай */
+.card-back {
+    background: var(--white);
+    transform: rotateY(180deg);
+    overflow: hidden;
+    border: 1px solid var(--rose);
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Хожсон үеийн бичиг */
+.win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 20;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.win-text { color: var(--cherry); letter-spacing: 5px; margin-bottom: 5px; }
+.win-subtext { font-size: 0.8rem; color: #666; margin-bottom: 20px; }
+
+/* Retry товчлуур */
+.retry-btn {
+    background: var(--cherry);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+/* R үсэг лугших эффект */
+.win-pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 27, 48, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(155, 27, 48, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(155, 27, 48, 0); }
+}
+
+/* Конфетти анимаци */
+.confetti {
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    z-index: 100;
+    animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -40%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}

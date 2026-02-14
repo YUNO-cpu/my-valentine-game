@@ -1,0 +1,116 @@
+.star-game-layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FAFAFA; /* --bg */
+    padding: 50px 0;
+    animation: fadeIn 0.5s ease;
+}
+
+/* LEVEL хэсэг - Soft White Rose */
+.level-indicator {
+    background: #FFF0F3; /* --rose */
+    padding: 8px 24px;
+    border-radius: 30px;
+    color: #9B1B30; /* --cherry */
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    border: 1px solid rgba(155, 27, 48, 0.05);
+    box-shadow: 0 4px 15px rgba(155, 27, 48, 0.03);
+}
+
+.canvas-holder {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    background: #FFFFFF; /* --white */
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+}
+
+/* Success & NEXT Button Overlay */
+.success-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #FFFFFF;
+    border-radius: 40px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.success-overlay.active { 
+    display: flex; 
+    animation: fadeIn 0.3s ease; 
+}
+
+.result-icon { 
+    font-size: 80px; 
+    margin-bottom: 30px; 
+}
+
+.btn-next-step {
+    background: #9B1B30; /* --cherry */
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 50px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-next-step:active {
+    opacity: 0.8;
+}
+
+/* CONNECT хэсэг - Доор */
+.bottom-label {
+    font-size: 10px;
+    font-weight: 900;
+    color: #9B1B30; /* --cherry */
+    letter-spacing: 10px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+
+.result-display {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 80px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    pointer-events: none; /* Энэ маш чухал! */
+}
+.result-display.show { transform: translate(-50%, -50%) scale(1); }
+
+.btn-next-step {
+    background: #9B1B30;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 50px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    z-index: 20; /* Товчлуур хамгийн дээр байх ёстой */
+}

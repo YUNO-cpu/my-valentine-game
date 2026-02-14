@@ -1,0 +1,3 @@
+.pop-zone { height: 350px; width: 100%; position: relative; }
+.pop-item { position: absolute; width: 40px; cursor: pointer; animation: popScale 0.3s; }
+@keyframes popScale { from { transform: scale(0); } to { transform: scale(1); } }

@@ -1,0 +1,61 @@
+.xo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.status-text {
+    margin: 10px 0;
+    color: #f5576c;
+    font-weight: 600;
+}
+
+.xo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.xo-cell {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.xo-cell:active {
+    transform: scale(0.95);
+}
+
+.xo-cell svg {
+    width: 45px;
+    height: 45px;
+}
+
+.reset-xo-btn {
+    margin-top: 20px;
+    background: white;
+    border: 1.5px solid #f5576c;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-xo-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: #f5576c;
+}

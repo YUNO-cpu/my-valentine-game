@@ -1,0 +1,64 @@
+.love-meter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.meter-icon svg {
+    width: 50px;
+    height: 50px;
+    color: #f5576c;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.input-group input {
+    padding: 12px;
+    border: 1px solid rgba(245, 87, 108, 0.3);
+    border-radius: 12px;
+    outline: none;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.calc-btn {
+    background: #f5576c;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.2);
+}
+
+.heart-rate-box {
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 800;
+    color: #f5576c;
+    animation: pulse 1s infinite;
+}
+
+#love-status {
+    color: #d81b60;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.hidden { display: none; }

@@ -1,0 +1,99 @@
+/* Maze Container */
+.maze-game-container {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto;
+}
+
+/* Stats Styling - Pill shape */
+.maze-stats {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.stat-pill {
+    background: #ffffff;
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    color: #fb7185; /* Cherry Pink */
+    font-size: 13px;
+    box-shadow: 0 4px 10px rgba(251, 113, 133, 0.1);
+    border: 1px solid #fff1f2;
+}
+
+/* Canvas Wrapper - Premium glass look */
+.maze-wrapper {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(251, 113, 133, 0.12);
+    border: 4px solid #fff1f2;
+}
+
+#mazeCanvas {
+    display: block;
+    border-radius: 12px;
+}
+
+/* Maze Control Buttons - Нэг эгнээнд (Flexbox) */
+.maze-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.m-btn {
+    background: #ffffff;
+    border: none;
+    color: #fb7185;
+    width: 62px;
+    height: 62px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    /* 3D Button Effect */
+    box-shadow: 0 5px 0 #ffe4e6, 0 8px 15px rgba(251, 113, 133, 0.15);
+    transition: all 0.1s ease;
+    touch-action: manipulation;
+}
+
+.m-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #ffe4e6, 0 4px 10px rgba(251, 113, 133, 0.1);
+}
+
+/* SVG icons styling */
+.m-btn svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+    stroke-width: 3px;
+}
+
+/* Эгнээний дарааллыг зааж өгөх (Зүүн, Дээш, Доош, Баруун) */
+.m-btn.left { order: 1; }
+.m-btn.up { order: 2; }
+.m-btn.down { order: 3; }
+.m-btn.right { order: 4; }
+
+.soon-text {
+    font-family: 'Segoe UI', sans-serif;
+    color: #fb7185;
+    font-weight: bold;
+    text-align: center;
+}

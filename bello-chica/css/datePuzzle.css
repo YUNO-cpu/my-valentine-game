@@ -1,0 +1,100 @@
+.puzzle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    animation: fadeIn 0.5s ease;
+}
+
+.puzzle-header {
+    margin-bottom: 15px;
+}
+
+.level-badge {
+    background: #f5576c; /* Cherry Red */
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.puzzle-board {
+    display: grid;
+    gap: 2px; /* Нарийн зураас илүү premium */
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(245, 87, 108, 0.15);
+    border: 2px solid #ffd700;
+    width: 90vw; /* Утасны дэлгэцийн өргөнд тааруулна */
+    max-width: 340px;
+    aspect-ratio: 1 / 1; /* Зургийн харьцаатайгаа ижил */
+    margin: 0 auto;
+}
+
+.p-piece {
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+    user-select: none;
+    touch-action: none; /* Утсан дээр scroll хийхгүй, piece-ээ зөв чирнэ */
+}
+
+/* Үе хоорондын шилжилт */
+.puzzle-container.next-level-anim {
+    animation: slideOutLeft 0.5s forwards;
+}
+
+@keyframes slideOutLeft {
+    to { transform: translateX(-100%); opacity: 0; }
+}
+
+.piece-content {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    transition: transform 0.2s;
+}
+
+.p-piece:active {
+    cursor: grabbing;
+    transform: scale(1.05); /* Жижиг биш, харин бага зэрэг томорвол чирч байгаа нь илүү мэдрэгддэг */
+    z-index: 10; /* Бусад piece-үүдийнхээ дээгүүр харагдана */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hint {
+    margin-top: 15px;
+    color: #f5576c;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.p-piece {
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.2s ease;
+    aspect-ratio: 1/1;
+}
+
+/* Сонгогдсон piece-ийн загвар */
+.p-piece.selected {
+    outline: 3px solid #ffd700;
+    z-index: 10;
+    transform: scale(0.95);
+    filter: brightness(1.2);
+}
+
+.piece-content {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    pointer-events: none; /* Доторх div-ийг биш үндсэн piece-ийг click хийхэд зориулав */
+}
+
+.puzzle-board {
+    user-select: none;
+    touch-action: manipulation;
+}

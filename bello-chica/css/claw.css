@@ -1,0 +1,228 @@
+:root {
+    --luxury-white: #ffffff;
+    --soft-pink: #fff1f2;
+    --gold: #d4af37;
+    --cherry: #fb7185;
+}
+
+/* Үндсэн их бие */
+.claw-machine-shell {
+    width: 330px;
+    height: 580px;
+    background: var(--luxury-white);
+    border-radius: 45px;
+    border: 10px solid #ffffff;
+    box-shadow: 0 30px 60px rgba(251, 113, 133, 0.2);
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.machine-glass {
+    height: 380px;
+    background: linear-gradient(180deg, #fffafa 0%, #ffe4e6 100%);
+    margin: 15px;
+    border-radius: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* КРАНЫ МЕХАНИЗМ */
+.claw-mechanism {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 40px;
+    z-index: 100;
+    transform: translateX(-50%);
+}
+
+.claw-string {
+    position: absolute;
+    top: 0; left: 50%;
+    width: 3px;
+    height: 100%;
+    background: #bbb;
+    transform: translateX(-50%);
+}
+
+.claw-head {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 30px;
+}
+
+.claw-core {
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    width: 36px; height: 36px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, var(--gold));
+    border-radius: 50%;
+    z-index: 105;
+    border: 2px solid white;
+}
+
+.claw-arm {
+    width: 10px; height: 40px;
+    background: var(--gold);
+    border-radius: 5px;
+    position: absolute;
+    top: 15px;
+    transition: transform 0.4s;
+}
+.arm-1 { left: 5px; transform-origin: top; transform: rotate(25deg); }
+.arm-2 { right: 5px; transform-origin: top; transform: rotate(-25deg); }
+
+.claw-head.closed .arm-1 { transform: rotate(60deg); }
+.claw-head.closed .arm-2 { transform: rotate(-60deg); }
+
+/* ТОГЛООМУУД */
+.plushies-bed {
+    position: absolute;
+    bottom: 0; width: 100%; height: 120px;
+}
+
+.plushie {
+    position: absolute;
+    width: 65px; height: 65px;
+    z-index: 10;
+}
+
+.plushie-img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+
+/* Кранд баригдсан тоглоом */
+.plushie-img-caught {
+    width: 50px;
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+}
+
+/* УДИРДЛАГЫН ХЭСЭГ */
+.machine-bottom {
+    padding: 5px 20px;
+}
+
+.controls-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Жойстик суурь - 4 зүгийн иконтой */
+.joystick-base {
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, #eee, #ccc);
+    border-radius: 50%;
+    position: relative;
+    border: 4px solid #fff;
+    box-shadow: inset 0 4px 10px rgba(0,0,0,0.2), 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Саваа (Stick) */
+.joystick {
+    width: 14px;
+    height: 55px;
+    background: var(--gold);
+    border-radius: 7px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: bottom center;
+    cursor: grab;
+    z-index: 10;
+    transition: transform 0.1s ease-out;
+}
+
+.joystick::after {
+    content: '';
+    position: absolute;
+    top: -18px; left: -11px;
+    width: 36px; height: 36px;
+    background: var(--cherry);
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* PUSH товчлуур */
+.push-btn {
+    width: 80px; height: 80px;
+    background: var(--cherry);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 6px 0 #e11d48;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.push-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 #e11d48;
+}
+
+/* ЖОЙСТИК ДЭЭРХ ИКОНУУД */
+.js-dir {
+    position: absolute;
+    font-size: 10px;
+    color: #bbb;
+    pointer-events: none;
+}
+.dir-up { top: 5px; }
+.dir-down { bottom: 5px; }
+.dir-left { left: 5px; }
+.dir-right { right: 5px; }
+
+/* ХОЖИХ ЦОНХ */
+.prize-reveal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 2000;
+}
+
+.prize-card {
+    background: white;
+    padding: 30px;
+    border-radius: 35px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 0 30px var(--cherry);
+}
+
+.win-prize-img {
+    width: 130px;
+    animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.claim-btn {
+    margin-top: 25px;
+    padding: 12px 40px;
+    background: var(--cherry);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}

@@ -1,0 +1,170 @@
+.bottle-game-container {
+    text-align: center;
+    width: 100%;
+}
+
+/* Тоглоомын талбай */
+.ocean-area {
+    height: 300px; /* Илүү зайтай болгов */
+    background: linear-gradient(to bottom, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* Бодит Давалгаа (Rotating биш, Waving!) */
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 3200px; /* Давтагдах урт */
+    height: 100px;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg') repeat-x;
+    animation: waveMove 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.6;
+}
+
+.wave2 {
+    bottom: 10px;
+    opacity: 0.3;
+    animation: waveMove 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite;
+}
+
+@keyframes waveMove {
+    0% { margin-left: 0; }
+    100% { margin-left: -1600px; }
+}
+
+/* Шилэн Лонх (Real Glass Look) */
+.bottle-wrapper {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    animation: floatBottle 4s ease-in-out infinite;
+}
+
+.glass-bottle {
+    width: 45px;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10px 10px 25px 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.cork {
+    width: 18px;
+    height: 12px;
+    background: #8b4513;
+    position: absolute;
+    top: -10px;
+    border-radius: 3px;
+}
+
+.scroll-paper {
+    width: 12px;
+    height: 45px;
+    background: #fdf5e6;
+    margin-top: 35px;
+    border-radius: 2px;
+    transform: rotate(8deg);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+@keyframes floatBottle {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Overlay & Final Content */
+.letter-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(245, 87, 108, 0.1);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.letter-overlay.active { opacity: 1; }
+
+.scroll-content {
+    background: #fff;
+    padding: 25px;
+    width: 85%;
+    max-width: 340px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.cherry-border {
+    border: 2px dashed #f5576c;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.love-text { color: #666; font-style: italic; }
+
+.valentine-q {
+    color: #f5576c;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 25px 0;
+}
+
+.v-btn {
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    border-radius: 30px;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.v-btn:active { transform: scale(0.95); }
+.yes { background: #f5576c; color: white; box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3); }
+.yes-2 { background: #ffd700; color: #333; }
+
+/* Final Celebration Styles */
+.final-celebration {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #ff9a9e 0%, #fecfef 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.final-text-area {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 35px;
+    box-shadow: 0 15px 40px rgba(255, 77, 109, 0.2);
+    width: 85%;
+}
+
+.final-title {
+    color: #ff4d6d;
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+/* Floating Hearts Particle */
+@keyframes floatUp {
+    0% { bottom: -50px; transform: translateX(0); opacity: 1; }
+    100% { bottom: 110vh; transform: translateX(50px) rotate(360deg); opacity: 0; }
+}

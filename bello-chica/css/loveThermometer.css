@@ -1,0 +1,181 @@
+.thermo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    color: #f5576c;
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+/* --- Термометрийн Бодит Харагдац --- */
+.thermometer-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Шилэн гуурс */
+.glass-tube {
+    width: 30px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 3.5px solid #ffffff;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    z-index: 2;
+}
+
+/* Мөнгөн ус (Дээшлэх хэсэг) */
+.mercury {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, #f5576c, #ff4d6d);
+    transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 10px 10px 0 0;
+}
+
+/* Доод талын бөөрөнхий (Bulb) */
+.bulb {
+    width: 65px;
+    height: 65px;
+    margin-top: -18px; /* Гуурстай залгах */
+    z-index: 3;
+    filter: drop-shadow(0 4px 10px rgba(245, 87, 108, 0.4));
+}
+
+.bulb svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Чичирхийлэх эффект */
+.shake {
+    animation: shakeEffect 0.1s ease-in-out;
+}
+
+@keyframes shakeEffect {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+}
+
+/* --- Тап товчлуур --- */
+.tap-btn {
+    background: #f5576c;
+    color: white;
+    border: none;
+    padding: 16px 45px;
+    border-radius: 35px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(245, 87, 108, 0.3);
+    transition: all 0.1s;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tap-btn:active {
+    transform: scale(0.92) translateY(2px);
+    box-shadow: 0 4px 10px rgba(245, 87, 108, 0.2);
+}
+
+/* --- Kiss Overlay (Sticker) --- */
+.kiss-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(245, 87, 108, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.kiss-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.kiss-overlay.hidden {
+    display: none;
+}
+
+.sticker-content {
+    background: white;
+    padding: 35px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+    transform: scale(0.6);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.kiss-overlay.active .sticker-content {
+    transform: scale(1);
+}
+
+.kiss-animation {
+    position: relative;
+    height: 100px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.heart-kiss {
+    width: 80px;
+    animation: pulseHeart 1s infinite;
+}
+
+.kiss-lips {
+    width: 45px;
+    position: absolute;
+    bottom: -10px;
+    animation: kissJump 1s infinite;
+}
+
+@keyframes pulseHeart {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes kissJump {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-20px); opacity: 0.8; }
+}
+
+.sticker-content h3 {
+    color: #f5576c;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.close-sticker-btn {
+    background: #ffd700;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
