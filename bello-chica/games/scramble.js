@@ -1,5 +1,5 @@
 function startScramble() {
-    const words = ['TIANA', 'LILIES', 'BABLACK', 'RYSHOLIC', 'HIPPOPOTOMONSTROSESQUIPEDALIOPHOBIA', 'PNEUMONOULTRAMICROSCOPICSILICOVOCANOCONIOSIS'];
+    const words = ['TIANA', 'LILIES', 'BABLACK', 'RYSHOLIC', 'NOMARTIN', 'YESJAEHYUN'];
     const targetWord = words[Math.floor(Math.random() * words.length)];
     let scrambled = targetWord.split('').sort(() => Math.random() - 0.5).join('');
     
